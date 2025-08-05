@@ -1,0 +1,44 @@
+One thing as well
+At the end of each quiz, please place a result page like the quiz start, but the content on it will change constantly the path that the person answers For those u choose the first answer on the first question, they will se the following: “ H: 	“Your Body May Be Struggling to Recover While You Sleep”
+SbH: “Based on your answers, it sounds like you’re giving your body time to rest — but not getting the restoration you need.
+And that tired feeling in the morning? It might not be from your sleep… but from what’s happening while you sleep.”
+B: “See what could be quietly draining your energy at night” “
+-
+For those u choose the second answer on the first question, they will se the following: “ H: 	“What If That Morning Stiffness Isn’t Just ‘Getting Older’?”
+SbH: “Based on your answers, your body may be trying to recover at night — but something could be getting in the way.
+That stiffness in the morning? It might be a signal, not just a side effect of age.”
+B: “Discover What Could Be Silently Affecting Your Body’s Overnight Healing” “
+-
+For those u choose the first third on the first question, they will se the following: “ H: 	“You May Be Sleeping — But Your Brain Isn’t Fully Shutting Down”
+SbH1: “From what you shared, it seems like your body might be resting, but your brain may still be working overtime through the night.”
+Or
+SbH2: “That sluggish, heavy, or mentally ‘off’ feeling in the morning isn’t just about sleep — it might be a sign your system isn’t fully recovering.”
+Or
+SbH3: “This can quietly build up over time — and most people don’t even realize it’s happening… until their mornings just stop feeling like mornings.”
+B: “Discover What May Be Quietly Draining Your Mental Energy Overnight, LITERALY” “
+-
+For those u choose the first forth on the first question, they will se the following: “ H: 	“Your Body May Be Sleeping — But It’s Not Fully Letting Go”
+SbH1: “Based on your answers, it sounds like your body is doing its best to rest…
+but tension, stress, or even unseen factors may be keeping your system in ‘alert mode’ — even while you sleep.”
+Or
+SbH2: “This can leave you tossing, turning, and waking up feeling like you’ve run a marathon… even if you were in bed all night.”
+Or
+SbH3: “The good news? You might not need to ‘fix’ anything. But there may be a simple way to help your body truly let go, reset, and reconnect to a deeper kind of rest — starting tonight.”
+B: “See What May Be Disrupting Your Body’s Natural Calm” “
+-
+For those u choose the first fifth on the first question, they will se the following: “ H4: 		“Could Your Body Be Recovering… Just Enough to Survive — But Not Enough to Live?”
+Or
+H4.1: 	“Could Your Body Be Recovering… Just Enough to Survive — But Not Enough to Truly Live?”
+Or
+H3:	 	“Could Your Body Be Recovering… Just Enough to Function — But Not Enough to Thrive?”
+Or
+H1: 		“What If Feeling ‘Fine’ Isn’t the Same as Feeling Fully Recovered?”
+Or
+H2: 		“What If ‘Feeling’ Fine Isn’t the Same as Being Fully Recovered?”
+SbH: 	You might feel fine now — but that doesn’t mean your body isn’t working harder than it should.
+Over time, that quiet effort adds up.
+Energy runs lower. Recovery slows down. Little aches linger longer.
+And one day, you realize… this didn’t happen overnight.
+B:		 See What May Be Silently Blocking Full Recovery While You Sleep “
+-
+Being H(Headline), SbH(SubHeadline) and B(Button)
