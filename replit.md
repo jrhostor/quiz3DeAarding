@@ -72,3 +72,21 @@ Preferred communication style: Simple, everyday language.
 - **date-fns**: Modern JavaScript date utility library
 - **clsx**: Utility for constructing className strings conditionally
 - **class-variance-authority**: Utility for creating variant-based component APIs
+
+# Deployment Configuration
+
+## Static Deployment Fix
+The project includes a custom deployment fix to resolve directory structure issues:
+
+- **Issue**: Vite builds files to `dist/public/` but Replit deployment expects files directly in `dist/`
+- **Solution**: `fix-deployment.js` script that moves files from `dist/public/` to `dist/` after build
+- **Usage**: Run `./build-for-deployment.sh` or `npm run build && node fix-deployment.js`
+
+## Build Process
+1. `npm run build` - Builds frontend assets to `dist/public/` and server bundle to `dist/`
+2. `node fix-deployment.js` - Moves frontend files from `dist/public/` to `dist/` 
+3. Result: `dist/index.html`, `dist/assets/`, and `dist/index.js` ready for deployment
+
+## Files Created for Deployment
+- `fix-deployment.js` - Node.js script that reorganizes build output
+- `build-for-deployment.sh` - Complete build and fix script with verification
