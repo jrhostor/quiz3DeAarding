@@ -65,9 +65,10 @@ export default function QuizResults() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
+            className="flex justify-center"
           >
             <Button
-              className="gradient-bg text-white font-semibold py-4 px-8 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-lg"
+              className="gradient-bg text-white font-semibold py-4 px-8 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-lg max-w-full break-words text-center"
               size="lg"
             >
               {result.buttonText}
