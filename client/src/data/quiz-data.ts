@@ -247,26 +247,26 @@ export const resultContent: { [key: string]: ResultContent } = {
   tired: {
     title: "Your Body May Be Struggling to Recover While You Sleep",
     subtitle: "Based on your answers, it sounds like you're giving your body time to rest — but not getting the restoration you need. And that tired feeling in the morning? It might not be from your sleep… but from what's happening while you sleep.",
-    buttonText: "See what could be quietly draining your energy at night"
+    buttonText: "See what is going on"
   },
   sore: {
     title: "What If That Morning Stiffness Isn't Just 'Getting Older'?",
     subtitle: "Based on your answers, your body may be trying to recover at night — but something could be getting in the way. That stiffness in the morning? It might be a signal, not just a side effect of age.",
-    buttonText: "Discover What Could Be Silently Affecting Your Body's Overnight Healing"
+    buttonText: "See what is going on"
   },
   foggy: {
     title: "You May Be Sleeping — But Your Brain Isn't Fully Shutting Down",
     subtitle: "From what you shared, it seems like your body might be resting, but your brain may still be working overtime through the night. That sluggish, heavy, or mentally 'off' feeling in the morning isn't just about sleep — it might be a sign your system isn't fully recovering.",
-    buttonText: "Discover What May Be Quietly Draining Your Mental Energy Overnight, LITERALLY"
+    buttonText: "See what is going on"
   },
   tense: {
     title: "Your Body May Be Sleeping — But It's Not Fully Letting Go",
     subtitle: "Based on your answers, it sounds like your body is doing its best to rest… but tension, stress, or even unseen factors may be keeping your system in 'alert mode' — even while you sleep. This can leave you tossing, turning, and waking up feeling like you've run a marathon… even if you were in bed all night.",
-    buttonText: "See What May Be Disrupting Your Body's Natural Calm"
+    buttonText: "See what is going on"
   },
   rested: {
     title: "Could Your Body Be Recovering… Just Enough to Survive — But Not Enough to Thrive?",
     subtitle: "You might feel fine now — but that doesn't mean your body isn't working harder than it should. Over time, that quiet effort adds up. Energy runs lower. Recovery slows down. Little aches linger longer. And one day, you realize… this didn't happen overnight.",
-    buttonText: "See What May Be Silently Blocking Full Recovery While You Sleep"
+    buttonText: "See what is going on"
   }
 };

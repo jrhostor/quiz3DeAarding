@@ -68,7 +68,7 @@ export default function QuizResults() {
             className="flex justify-center"
           >
             <Button
-              className="gradient-bg text-white font-semibold py-4 px-8 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-lg max-w-full break-words text-center"
+              className="gradient-bg text-white font-semibold py-4 px-8 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-lg max-w-full break-words text-center whitespace-normal leading-tight"
               size="lg"
             >
               {result.buttonText}
