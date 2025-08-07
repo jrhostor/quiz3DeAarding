@@ -33,6 +33,48 @@ export const firstQuestion: QuizQuestion = {
 export const quizPaths: QuizPath = {
   tired: [
     {
+      question: "Do you still feel that tiredness even after getting 7–8 hours of sleep?",
+      answers: [
+        { id: '1', text: 'Yes, almost every day.' },
+        { id: '2', text: 'Yes, occasionally.' },
+        { id: '3', text: 'Only when I sleep poorly.' },
+        { id: '4', text: 'Not really, I bounce back fast.' },
+        { id: '5', text: 'I\'m not sure.' }
+      ]
+    },
+    {
+      question: "How often do you need caffeine or sugar to help 'wake up'?",
+      answers: [
+        { id: '1', text: 'Almost every morning' },
+        { id: '2', text: 'Sometimes, not always' },
+        { id: '3', text: 'Rarely' },
+        { id: '4', text: 'I try not to rely on anything' },
+        { id: '5', text: 'I don\'t really pay attention' }
+      ]
+    },
+    {
+      question: "Have you noticed your energy dipping in the afternoon — even on easy days?",
+      answers: [
+        { id: '1', text: 'Yes, it\'s a regular thing' },
+        { id: '2', text: 'It happens occasionally' },
+        { id: '3', text: 'Not really, I stay alert' },
+        { id: '4', text: 'Only if I didn\'t sleep well' },
+        { id: '5', text: 'Never paid attention' }
+      ]
+    },
+    {
+      question: "Would you say your sleep is deep and restful — or more light and broken?",
+      answers: [
+        { id: '1', text: 'Light and broken' },
+        { id: '2', text: 'Some nights are okay, but not deep' },
+        { id: '3', text: 'It\'s different every night' },
+        { id: '4', text: 'Deep enough, but not energizing' },
+        { id: '5', text: 'It feels restful to me' }
+      ]
+    }
+  ],
+  sore: [
+    {
       question: "Where do you usually feel the stiffness or soreness?",
       answers: [
         { id: '1', text: 'Lower back' },
@@ -73,7 +115,7 @@ export const quizPaths: QuizPath = {
       ]
     }
   ],
-  sore: [
+  foggy: [
     {
       question: "What do you usually feel first thing in the morning?",
       answers: [
@@ -112,48 +154,6 @@ export const quizPaths: QuizPath = {
         { id: '3', text: 'My brain feels active even while sleeping' },
         { id: '4', text: 'I dream a lot — maybe too much' },
         { id: '5', text: 'I think my sleep is okay' }
-      ]
-    }
-  ],
-  foggy: [
-    {
-      question: "When you wake up, what do you usually feel first?",
-      answers: [
-        { id: '1', text: 'Slightly tense — like I\'ve been clenching or holding tension' },
-        { id: '2', text: 'Okay, but I don\'t feel deeply rested' },
-        { id: '3', text: 'Still a bit anxious or restless' },
-        { id: '4', text: 'Like I was moving a lot overnight' },
-        { id: '5', text: 'Honestly, I don\'t really think about it' }
-      ]
-    },
-    {
-      question: "Do you often notice yourself shifting or adjusting during the night?",
-      answers: [
-        { id: '1', text: 'Yes — I change positions a lot' },
-        { id: '2', text: 'I toss and turn a few times' },
-        { id: '3', text: 'Just once or twice' },
-        { id: '4', text: 'Only if something wakes me' },
-        { id: '5', text: 'I have no idea — maybe?' }
-      ]
-    },
-    {
-      question: "How would you describe your body's state when you finally fall asleep?",
-      answers: [
-        { id: '1', text: 'A little tense or tight' },
-        { id: '2', text: 'My mind and body are both racing' },
-        { id: '3', text: 'Physically relaxed, mentally alert' },
-        { id: '4', text: 'Depends on the night' },
-        { id: '5', text: 'I fall asleep without noticing much' }
-      ]
-    },
-    {
-      question: "How do you usually feel by mid-morning or early afternoon?",
-      answers: [
-        { id: '1', text: 'I still feel a bit "off" or heavy' },
-        { id: '2', text: 'I pick up energy later in the day' },
-        { id: '3', text: 'I feel okay, but a little sluggish' },
-        { id: '4', text: 'I\'m alert but easily overwhelmed' },
-        { id: '5', text: 'I feel great most of the day' }
       ]
     }
   ],

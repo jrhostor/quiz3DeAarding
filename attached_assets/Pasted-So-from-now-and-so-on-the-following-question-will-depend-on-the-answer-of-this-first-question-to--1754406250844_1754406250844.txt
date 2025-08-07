@@ -1,0 +1,148 @@
+So, from now and so on, the following question will depend on the answer of this first question, to start,
+If the person answers: “Tired — like I didn't sleep enough.”
+The following questions and options of answer will be:
+“
+Q2-B1: “Where do you usually feel the stiffness or soreness?”
+Q2-B1:
+PA:
+B1: Lower back
+B2: Neck or shoulders
+B3: Hips or knees
+B4: All over — like my whole body aches
+B5: It moves around, not always in the same spot
+->
+Q3-B.1: “How often do you stretch or move in the morning just to ‘loosen up’?”
+PA:
+1: Every day — it’s the only way I feel normal
+2: A few times a week
+3: Only if I feel sore
+4: I don’t really do that
+5: I wake up stiff, but I just deal with it
+->
+Q4-B.1: “Would you say your sleep is restful, or more light and interrupted?”
+PA:
+1: Light and interrupted
+2: It varies a lot
+3: It feels deep, but I still wake up sore
+4: Not sure
+5: I think it’s fine, but hard to say
+->
+Q5-B.1: “How would you describe your sleep environment?”
+PA:
+1: Too warm, too many blankets
+2: I often sleep in odd positions
+3: I use ergonomic pillows/mattress
+4: I sleep with a partner who moves a lot
+5: It’s quiet and comfortable
+”
+If the person answers: “Sore or stiff — especially in my back or joints.”
+The following questions and options of answer will be:
+“
+Q2-C1: “What do you usually feel first thing in the morning?”
+Q2-C1:
+PA:
+
+C1: Like I need caffeine just to function
+C2: Heavy-headed, like my brain is stuck
+C3: Groggy or “off” for a while
+C4: Distracted or mentally cluttered
+C5: Emotionally flat — not sad, just… dull
+->
+Q3-C.1: “How long does it usually take you to feel like yourself after waking up?”
+PA:
+1: Less than 15 minutes
+2: 30–60 minutes
+3: Over an hour
+4: It varies a lot
+5: Sometimes I never really feel fully “on”
+->
+Q4-C.1: “How often do you forget little things during the day?”
+PA:
+1: Constantly — it’s frustrating
+2: A few times a day
+3: Sometimes, but I just laugh it off
+4: Not often
+5: I’m not sure
+->
+Q5-C.1: “How would you describe your sleep?”
+PA:
+1: I wake up often
+2: I sleep through but still wake foggy
+3: My brain feels active even while sleeping
+4: I dream a lot — maybe too much
+5: I think my sleep is okay
+”
+If the person answers: “Mentally foggy or slow to start the day.”
+The following questions and options of answer will be:
+“
+Q2-D1: “When you wake up, what do you usually feel first?”
+Q2-D1:
+PA:
+
+D1: Slightly tense — like I’ve been clenching or holding tension
+D2: Okay, but I don’t feel deeply rested
+D3: Still a bit anxious or restless
+D4: Like I was moving a lot overnight
+D5: Honestly, I don’t really think about it
+->
+Q3-D.1: “Do you often notice yourself shifting or adjusting during the night?”
+PA:
+1: Yes — I change positions a lot
+2: I toss and turn a few times
+3: Just once or twice
+4: Only if something wakes me
+5: I have no idea — maybe?
+->
+Q4-D.1: “How would you describe your body’s state when you finally fall asleep?”
+PA:
+1: A little tense or tight
+2: My mind and body are both racing
+3: Physically relaxed, mentally alert
+4: Depends on the night
+5: I fall asleep without noticing much
+->
+Q5-D.1: “How do you usually feel by mid-morning or early afternoon?”
+PA:
+1: I still feel a bit “off” or heavy
+2: I pick up energy later in the day
+3: I feel okay, but a little sluggish
+4: I’m alert but easily overwhelmed
+5: I feel great most of the day
+”
+If the person answers: “Pretty good actually — I feel rested.”
+The following questions and options of answer will be:
+“
+Q2-E1: When you wake up feeling rested, how long does that usually last?”
+Q2-E1:
+PA:
+
+E1: Most of the day — I stay energized
+E2: Until late morning, then I dip
+E3: Until lunch, then I feel a bit foggy
+E4: I crash in the afternoon
+E5: I’m honestly not sure — I don’t think about it
+->
+Q3-E.1: “Have you ever had a phase where you felt even more refreshed than now?”
+PA:
+1: Yes — there were times I felt incredible
+2: I think so, but it’s been a while
+3: Maybe when I was younger
+4: I’m not sure — this feels normal to me
+5: No — I feel just as good now
+->
+Q4-E.1: “Do you ever notice tension or tightness during the day — even when you feel rested?”
+PA:
+1: Yes — neck, back, or jaw mostly
+2: Occasionally, especially under stress
+3: Sometimes after waking up
+4: Not really
+5: I’ve never paid attention to that
+->
+Q5-E.1: “How often do you wake up and feel… truly recharged?”
+PA:
+1: Almost every day
+2: A few times a week
+3: Once in a while
+4: Rarely — but I still function fine
+5: I’ve never thought about it that way
+”
