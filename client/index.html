@@ -18,41 +18,56 @@
     <script src="https://replit.com/public/js/replit-dev-banner.js"></script>
 
     <!-- ✅ Post the height to the parent (Funnelish) so the iframe can auto-resize -->
-    <script>
-      function postHeight() {
-        // Use the tallest of body/document to be safe
-        const h = Math.max(
-          document.body.scrollHeight,
-          document.documentElement.scrollHeight
-        );
-        // If you want to tighten security, replace "*" with your Funnelish origin:
-        // e.g., "https://your-funnelish-domain.com"
+<script>
+  (function () {
+    var last = 0, rafId = null, intervalId = null;
+
+    function measure() {
+      var h = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight,
+        document.documentElement.offsetHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight
+      );
+      if (Math.abs(h - last) > 1) {
+        last = h;
         window.parent.postMessage({ type: "quiz:height", value: h }, "*");
       }
+    }
 
-      // Run after load, after hydration, and whenever content changes
-      window.addEventListener("load", () => {
-        // initial
-        postHeight();
-        // a few delayed checks for React hydration/layout shifts
-        setTimeout(postHeight, 100);
-        setTimeout(postHeight, 300);
-        setTimeout(postHeight, 800);
-      });
+    // Respond to parent nudges
+    window.addEventListener("message", function (e) {
+      if (e.data && e.data.type === "quiz:pleaseMeasure") measure();
+    });
 
-      // Resize on viewport changes
-      window.addEventListener("resize", () => {
-        // debounce a bit
-        clearTimeout(window.__qh);
-        window.__qh = setTimeout(postHeight, 60);
-      });
+    // Initial + staged checks (hydration, fonts, images)
+    window.addEventListener("load", function () {
+      measure();
+      setTimeout(measure, 80);
+      setTimeout(measure, 200);
+      setTimeout(measure, 500);
+      setTimeout(measure, 1000);
+    });
 
-      // Observe DOM changes (React route changes, expanding sections, etc.)
-      new MutationObserver(() => postHeight()).observe(document.body, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-      });
-    </script>
+    // Re-measure on resize
+    window.addEventListener("resize", function () {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(measure);
+    });
+
+    // Re-measure on DOM changes
+    new MutationObserver(measure).observe(document.body, {
+      childList: true, subtree: true, attributes: true, characterData: true
+    });
+
+    // Short heartbeat for mobile viewport quirks
+    intervalId = setInterval(measure, 800);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) { clearInterval(intervalId); intervalId = null; }
+      else if (!intervalId) { intervalId = setInterval(measure, 800); measure(); }
+    });
+  })();
+</script>
   </body>
 </html>
