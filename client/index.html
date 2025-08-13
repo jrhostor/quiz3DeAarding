@@ -2,12 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <title>Quiz</title>
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Your app entry (Vite/React dev). In production this will point to the built JS file. -->
     <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+
+    <!-- Replit dev banner (OK to keep) -->
+    <script src="https://replit.com/public/js/replit-dev-banner.js"></script>
+
+    <!-- ✅ Post the height to the parent (Funnelish) so the iframe can auto-resize -->
+    <script>
+      function postHeight() {
+        // Use the tallest of body/document to be safe
+        const h = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        );
+        // If you want to tighten security, replace "*" with your Funnelish origin:
+        // e.g., "https://your-funnelish-domain.com"
+        window.parent.postMessage({ type: "quiz:height", value: h }, "*");
+      }
+
+      // Run after load, after hydration, and whenever content changes
+      window.addEventListener("load", () => {
+        // initial
+        postHeight();
+        // a few delayed checks for React hydration/layout shifts
+        setTimeout(postHeight, 100);
+        setTimeout(postHeight, 300);
+        setTimeout(postHeight, 800);
+      });
+
+      // Resize on viewport changes
+      window.addEventListener("resize", () => {
+        // debounce a bit
+        clearTimeout(window.__qh);
+        window.__qh = setTimeout(postHeight, 60);
+      });
+
+      // Observe DOM changes (React route changes, expanding sections, etc.)
+      new MutationObserver(() => postHeight()).observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+      });
+    </script>
   </body>
 </html>
