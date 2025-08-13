@@ -20,52 +20,54 @@
     <!-- ✅ Post the height to the parent (Funnelish) so the iframe can auto-resize -->
 <script>
   (function () {
-    var last = 0, rafId = null, intervalId = null;
+    var last = 0;
+    var ticking = false;
+    var debounceId = null;
 
-    function measure() {
-      var h = Math.max(
+    function computeHeight() {
+      // robust max across browsers
+      return Math.max(
         document.documentElement.scrollHeight,
         document.body.scrollHeight,
         document.documentElement.offsetHeight,
         document.body.offsetHeight,
         document.documentElement.clientHeight
       );
-      if (Math.abs(h - last) > 1) {
-        last = h;
-        window.parent.postMessage({ type: "quiz:height", value: h }, "*");
-      }
     }
 
-    // Respond to parent nudges
-    window.addEventListener("message", function (e) {
-      if (e.data && e.data.type === "quiz:pleaseMeasure") measure();
-    });
+    function postHeight(force) {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        var h = computeHeight();
+        if (force || Math.abs(h - last) > 5) {
+          last = h;
+          window.parent.postMessage({ type: "quiz:height", value: h }, "*");
+        }
+      });
+    }
 
-    // Initial + staged checks (hydration, fonts, images)
+    // Debounced notifier for DOM changes
+    function schedulePost(force) {
+      clearTimeout(debounceId);
+      debounceId = setTimeout(function () { postHeight(!!force); }, 60);
+    }
+
+    // Initial + staged checks for hydration/fonts/images
     window.addEventListener("load", function () {
-      measure();
-      setTimeout(measure, 80);
-      setTimeout(measure, 200);
-      setTimeout(measure, 500);
-      setTimeout(measure, 1000);
+      postHeight(true);
+      setTimeout(function(){ postHeight(true); }, 120);
+      setTimeout(function(){ postHeight(true); }, 300);
+      setTimeout(function(){ postHeight(true); }, 800);
     });
 
-    // Re-measure on resize
-    window.addEventListener("resize", function () {
-      if (rafId) cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(measure);
-    });
+    // On resize (e.g., mobile rotation / keyboard)
+    window.addEventListener("resize", function () { schedulePost(false); });
 
-    // Re-measure on DOM changes
-    new MutationObserver(measure).observe(document.body, {
+    // On DOM mutations (route changes, expanding answers, etc.)
+    new MutationObserver(function () { schedulePost(false); }).observe(document.body, {
       childList: true, subtree: true, attributes: true, characterData: true
-    });
-
-    // Short heartbeat for mobile viewport quirks
-    intervalId = setInterval(measure, 800);
-    document.addEventListener("visibilitychange", function () {
-      if (document.hidden) { clearInterval(intervalId); intervalId = null; }
-      else if (!intervalId) { intervalId = setInterval(measure, 800); measure(); }
     });
   })();
 </script>
