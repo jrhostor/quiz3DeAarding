@@ -70,6 +70,59 @@
       childList: true, subtree: true, attributes: true, characterData: true
     });
   })();
+  
+  (function () {
+    // helper: ask parent (Funnelish) to scroll to top of the quiz block
+    function requestParentScrollToTop() {
+      // blur to close mobile keyboards so scroll isn't blocked
+      if (document.activeElement) document.activeElement.blur();
+      window.parent.postMessage({ type: "quiz:scrollToTop" }, "*");
+    }
+
+    // 1) Event delegation: when ANY button that looks like "Next" is clicked
+    document.addEventListener("click", function (e) {
+      var el = e.target;
+      if (!(el instanceof Element)) return;
+
+      // find the nearest button-like element
+      var btn = el.closest('button, [role="button"], .btn, .button');
+      if (!btn) return;
+
+      // heuristics: text contains "next" (case-insensitive) or has a known class/id
+      var txt = (btn.innerText || btn.textContent || "").trim().toLowerCase();
+      var isNext =
+        /^(next|continue|proceed|volgende)$/.test(txt) ||      // exact words
+        /next|continue|proceed|volgende/.test(txt) ||          // substring
+        btn.id === "next" || btn.classList.contains("next") || // common hooks
+        btn.dataset.next === "true";
+
+      if (isNext) {
+        // wait a tick for your app to render the next question, then request scroll
+        setTimeout(requestParentScrollToTop, 80);
+      }
+    }, true);
+
+    // 2) Fallback: if your quiz updates the DOM without a button (auto-advance),
+    // watch for big DOM changes and request scroll once.
+    var lastMutation = 0;
+    var mo = new MutationObserver(function (mutations) {
+      var now = Date.now();
+      // throttle so we don't spam on heavy renders
+      if (now - lastMutation < 150) return;
+      lastMutation = now;
+      // Heuristic: when many nodes change, it’s likely a new question
+      var changed = 0;
+      for (var i = 0; i < mutations.length; i++) {
+        changed += (mutations[i].addedNodes ? mutations[i].addedNodes.length : 0);
+      }
+      if (changed > 3) {
+        setTimeout(requestParentScrollToTop, 80);
+      }
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    // (You already have the height postMessage script in this page; keep it as is.)
+  })();
 </script>
   </body>
 </html>
