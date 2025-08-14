@@ -70,6 +70,19 @@
       childList: true, subtree: true, attributes: true, characterData: true
     });
   })();
+
+  (function () {
+    // TEMP TEST: send scroll command on any tap/click inside the quiz
+    // (We’ll refine to “Next” only after we confirm it works end-to-end.)
+    var send = function () {
+      if (document.activeElement) document.activeElement.blur();
+      window.parent.postMessage({ type: "quiz:scrollToTop" }, "*");
+    };
+
+    // Click / tap anywhere
+    document.addEventListener("click", function(){ setTimeout(send, 30); }, true);
+    document.addEventListener("touchend", function(){ setTimeout(send, 30); }, true);
+  })();
   
   (function () {
     // helper: ask parent (Funnelish) to scroll to top of the quiz block
