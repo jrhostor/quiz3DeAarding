@@ -180,14 +180,14 @@
 
   (function () {
   document.addEventListener("click", function (e) {
-    // Match the "See what's going on" button
+    // Match the "See what is going on" button
     var btn = e.target.closest('button, a, .btn, .button');
     if (!btn) return;
 
     var txt = (btn.innerText || btn.textContent || "").trim().toLowerCase();
-    if (txt.includes("see what's going on")) {
+    if (txt.includes("see what is going on")) {
       e.preventDefault(); // stop any default quiz behavior if needed
-      window.location.href = "https://YOUR-TARGET-URL.com"; // <-- change this
+      window.location.href = "https://e-vibez.com"; // <-- change this
     }
   }, true);
 })();
