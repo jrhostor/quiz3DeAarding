@@ -72,16 +72,30 @@
   })();
 
   (function () {
-    // TEMP TEST: send scroll command on any tap/click inside the quiz
-    // (We’ll refine to “Next” only after we confirm it works end-to-end.)
-    var send = function () {
+    function requestParentScroll() {
       if (document.activeElement) document.activeElement.blur();
       window.parent.postMessage({ type: "quiz:scrollToTop" }, "*");
-    };
+    }
 
-    // Click / tap anywhere
-    document.addEventListener("click", function(){ setTimeout(send, 30); }, true);
-    document.addEventListener("touchend", function(){ setTimeout(send, 30); }, true);
+    // Heuristics for "Next" controls; adjust selectors to your markup if needed
+    document.addEventListener("click", function (e) {
+      var el = e.target && e.target.closest('button, [role="button"], .btn, .button, [data-next], [data-action="next"]');
+      if (!el) return;
+
+      var txt = (el.innerText || el.textContent || "").trim().toLowerCase();
+      var looksLikeNext =
+        /^(next|continue|proceed|volgende|siguiente|weiter)$/.test(txt) ||
+        /next|continue|proceed|volgende|siguiente|weiter/.test(txt) ||
+        el.id === "next" ||
+        el.classList.contains("next") ||
+        el.dataset.next === "true" ||
+        el.getAttribute("data-action") === "next";
+
+      if (looksLikeNext) {
+        // wait one tick for the new question to render
+        setTimeout(requestParentScroll, 80);
+      }
+    }, true);
   })();
   
   (function () {
