@@ -20,6 +20,34 @@
     <!-- ✅ Post the height to the parent (Funnelish) so the iframe can auto-resize -->
 <script>
   (function () {
+  // Helper to send scroll request to parent (Funnelish)
+  function requestParentScroll() {
+    if (document.activeElement && typeof document.activeElement.blur === "function") {
+      document.activeElement.blur(); // close mobile keyboard
+    }
+    window.parent.postMessage({ type: "quiz:scrollToTop" }, "*");
+  }
+
+  // Listen for clicks on anything that looks like a Next/Continue button
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest('button, [role="button"], .btn, .button, [data-next], [data-action="next"]');
+    if (!btn) return;
+    var txt = (btn.innerText || btn.textContent || "").trim().toLowerCase();
+    var isNext =
+      /^(next|continue|proceed|volgende|siguiente|weiter)$/.test(txt) ||
+      /next|continue|proceed|volgende|siguiente|weiter/.test(txt) ||
+      btn.id === "next" ||
+      btn.classList.contains("next") ||
+      btn.dataset.next === "true" ||
+      btn.getAttribute("data-action") === "next";
+    if (isNext) {
+      // Wait for the new question to render, then scroll
+      setTimeout(requestParentScroll, 80);
+    }
+  }, true);
+})();
+  
+  (function () {
     var last = 0;
     var ticking = false;
     var debounceId = null;
