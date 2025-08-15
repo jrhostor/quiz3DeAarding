@@ -175,9 +175,22 @@
       }
     });
     mo.observe(document.body, { childList: true, subtree: true });
-
     // (You already have the height postMessage script in this page; keep it as is.)
   })();
+
+  (function () {
+  document.addEventListener("click", function (e) {
+    // Match the "See what's going on" button
+    var btn = e.target.closest('button, a, .btn, .button');
+    if (!btn) return;
+
+    var txt = (btn.innerText || btn.textContent || "").trim().toLowerCase();
+    if (txt.includes("see what's going on")) {
+      e.preventDefault(); // stop any default quiz behavior if needed
+      window.location.href = "https://YOUR-TARGET-URL.com"; // <-- change this
+    }
+  }, true);
+})();
 </script>
   </body>
 </html>
